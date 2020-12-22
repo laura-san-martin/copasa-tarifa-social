@@ -1,0 +1,169 @@
+.copasa{
+
+    &__banner{
+        background-image: url('../img/pics/bg.jpg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: cover;
+        margin-top: 9rem;
+        padding: 8rem 0 4rem;
+
+        &__img{
+            width: 100%;
+            height: auto;
+            z-index: 2;
+            position: relative;
+        }
+
+        p{
+            margin: 1rem auto 2rem;
+            font-size: 3rem;
+        }
+    }
+
+
+    &__icone{
+        text-align: center;
+        p{
+            color: $color-white;
+            text-transform: uppercase;
+            background-color: $color-blue-copasa;
+            text-align: center;
+            line-height: 1;
+            padding: 1rem 0;
+        }
+        
+        img{
+            margin: 0 auto;
+            max-width: 25rem;
+            object-position: bottom;
+            object-fit: contain;
+        }
+    }
+    
+    &__topico{
+        text-transform: uppercase;  
+        background-color: white;
+        line-height: 1;
+        padding: 1rem 1.2rem;
+        color: $color-pink;
+        display: inline-block;
+        margin: 1rem;
+        width: auto;
+        font-family: 'Roboto Black';
+        border-left: 1rem solid $color-yellow;
+        
+    }
+
+    &__contato{
+        border-top: 15px solid $color-blue-copasa;
+        background: $color-white;
+
+        h4{
+            color: $color-blue-copasa;
+            font-family: 'Roboto Black'; 
+            white-space: pre-line !important;
+            line-height: 1.1;
+
+                span{
+                    font-family: 'Roboto Light'; 
+                }
+        }
+
+        &__img
+        {
+            margin-top: -10%;
+            width: 270%;
+            float: left;
+            margin-left: -50%;
+        
+        }
+
+        &__item{
+            display: flex;
+            width: 100%;
+            margin: 40px 0;
+
+            h4{
+                text-align: center;
+                margin: auto;
+            }
+
+            p{
+                color: $color-blue-copasa;
+                margin: auto;
+                line-height: 1.1;
+            }
+
+            &__icone{
+    
+                text-align: center;
+                cursor: pointer;
+                margin: auto;
+                margin-right: 40px;
+                
+                img{
+                    height: 80px;
+                    width: 80px;
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+
+    @include media-breakpoint-down(lg) { 
+        &__contato{
+            &__item{
+                margin: 25px 0;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) { 
+       
+
+    }
+
+    @include media-breakpoint-down(sm) {
+
+         &__contato{
+
+            &__img{
+                margin-left: -40%;
+                float: left;
+                margin-top: -15%;
+            }
+
+            &__item{
+              
+                img{
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+
+        &__contato{
+
+            &__item{
+                display: block;
+                
+
+                &__icone{
+    
+                    margin-right: 0;
+                    
+                    h4{
+                        margin-bottom: 20px;
+                        white-space: nowrap !important;
+                    }
+                }
+            }
+        }
+    }
+}

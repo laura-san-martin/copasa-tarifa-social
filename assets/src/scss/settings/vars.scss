@@ -1,0 +1,67 @@
+﻿$color-black: #000000;
+$color-white: #ffffff;
+$color-pink: #f26d69;
+$color-yellow: #fcb616;
+$color-green: #6ebd61;
+$color-green-dark: #1c4a4f;
+$color-blue-light: #23f4f2;
+$color-blue: #7ecef8;
+$color-blue-dark: #001436;
+$color-blue-copasa: #4275bb;
+
+
+$theme-colors: (
+  'black':	$color-black,
+  'white':	$color-white,
+  'yellow':	$color-yellow,
+  'pink':	$color-pink,
+  'green':	$color-green,
+  'green-dark':	$color-green-dark,
+  "blue": $color-blue,
+  "blue-dark": $color-blue-dark,
+  "blue-light": $color-blue-light,
+  'blue-copasa': $color-blue-copasa,
+);
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin custom-bg-variant($parent, $value) {
+    #{$parent} {
+        background-color: $value !important;
+    }
+
+    a#{$parent},
+    button#{$parent} {
+    
+        @include hover-focus {
+            background-color: darken($value, 10%) !important;
+        }
+    }
+}
+
+@mixin custom-color-variant($parent, $value) {
+    #{$parent} {
+        color: $value;
+
+        h2,p,h3,h4{
+            color: $value;
+        }
+    }
+}
+
+@mixin custom-border-variant($parent, $value) {
+    #{$parent} {
+        border-bottom: 5px solid $value;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    @include custom-color-variant('.color-#{$color}',$value);
+    @include custom-bg-variant('.bg-#{$color}', $value);
+    @include custom-border-variant('.bb-#{$color}', $value);
+}
